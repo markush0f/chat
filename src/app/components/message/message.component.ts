@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 import { IMessage } from '../../shared/models/message.interface';
+import { IUser } from '../../shared/models/user.interface';
+import { UserService } from '../../services/user.service';
+import { EventEmitter } from 'stream';
 
 @Component({
   selector: 'app-message',
@@ -9,24 +12,11 @@ import { IMessage } from '../../shared/models/message.interface';
   styleUrl: './message.component.css'
 })
 export class MessageComponent {
-  message: IMessage[] = [
-    {
-      authorId: 1,
-      content: 'Hi!! How are youuu????'
-    },
+  @Input() message!: IMessage;
+  @Input() user!: IUser | null;
+  constructor(private userService: UserService) {
 
-    {
-      authorId: 2,
-      content: 'Hellooo!! fine, and you????'
-    },
-    {
-      authorId: 1,
-      content: 'Im fine too!!'
-    },
-    {
-      authorId: 1,
-      content: 'What are you doing today?'
-    }
+  }
 
-  ]
+
 }

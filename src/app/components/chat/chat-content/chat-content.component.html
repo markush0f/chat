@@ -1,0 +1,11 @@
+<div class="pl-4 pr-4">
+  @for(message of messages; track message.id) {
+    <app-message [message]="message" [user]="user"></app-message>
+  } @empty {
+    <h1 class="text-center">Start a conversation!!!</h1>
+  }
+</div>
+
+<div class="mt-4">
+  <input type="text" class="w-full p-3 rounded-l-lg rounded-none border border-main-orange" placeholder="Type your message...">
+</div>

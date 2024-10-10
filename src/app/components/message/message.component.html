@@ -1,1 +1,7 @@
-<p>message works!</p>
+<div class="flex {{ message.senderId === user?.id ? 'justify-start' : 'justify-end' }} mb-5">
+  <div class="p-3 max-w-xs md:max-w-md rounded-lg cursor-pointer
+    {{ message.senderId === user?.id ? 'bg-second-orange rounded-tl-none' : 'bg-main-orange rounded-tr-none' }}">
+    <span class="text-white text-lg">{{ message.content }}</span>
+
+  </div>
+</div>
